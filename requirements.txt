@@ -40,10 +40,6 @@ protobuf==3.8.0
 pyasn1==0.4.3
 PyAutoGUI==0.9.48
 pycparser==2.18
-PyGetWindow==0.0.8
-pyinstaller==4.1.dev0
-pyinstaller-hooks-contrib==2020.8
-PyMsgBox==1.0.7
 PyMySQL==0.10.1
 pyOpenSSL==18.0.0
 pyparsing==2.2.0
