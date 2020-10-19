@@ -10,7 +10,7 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 @app.route('/', methods=['POST']) #GET requests will be blocked
 def index():
     #json_obj = request.get_json()
-    val1 = request.values
+    val1 = request.json
     return 'data received: \n{}'.format(val1)
 
 
