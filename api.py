@@ -1,7 +1,11 @@
 from flask import Flask, request #import main Flask class and request object
+from flask_cors import CORS
+
 import os
 
 app = Flask(__name__) #create the Flask app
+
+cors = CORS(app, resource={r"/*":{"origins": "*"}})
 
 @app.route('/', methods=['POST']) #GET requests will be blocked
 def json_example():
