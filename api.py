@@ -11,6 +11,7 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 def index():
     #json_obj = request.get_json()
     val1 = request.json
+    print("[*] REQ: *****************\n", val1)
     return 'data received: \n{}'.format(val1)
 
 
