@@ -8,7 +8,7 @@ app = Flask(__name__) #create the Flask app
 cors = CORS(app, resource={r"/*":{"origins": "*"}})
 
 @app.route('/', methods=['POST']) #GET requests will be blocked
-def json_example():
+def index():
     return 'data received: \n{}'.format(request.get_json())
 
 
