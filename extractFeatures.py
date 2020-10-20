@@ -83,9 +83,9 @@ def extractFeatures(signal):
     '''wp1 = pywt.WaveletPacket(data=feature1, wavelet='db4', mode='smooth')
     wp2 = pywt.WaveletPacket(data=feature2, wavelet='db4', mode='smooth')
     wp3 = pywt.WaveletPacket(data=feature3, wavelet='db4', mode='smooth')'''
-    wp4 = pywt.WaveletPacket(data=feature4, wavelet=waveletType, mode='smooth')
-    wp5 = pywt.WaveletPacket(data=feature5, wavelet=waveletType, mode='smooth')
-    wp6 = pywt.WaveletPacket(data=feature5, wavelet=waveletType, mode='smooth')
+    wp4 = pywt.WaveletPacket(data=feature4, wavelet='sym20' , mode='smooth')
+    wp5 = pywt.WaveletPacket(data=feature5, wavelet='sym20', mode='smooth')
+    wp6 = pywt.WaveletPacket(data=feature5, wavelet='sym20', mode='smooth')
 
     '''entropies = [RenyiEntropySignal(feature1, 1), RenyiEntropySignal(feature2, 1), RenyiEntropySignal(feature3, 1), 
                 RenyiEntropySignal(feature4, 1), RenyiEntropySignal(feature5, 1), RenyiEntropySignal(feature6, 1) ]'''
@@ -112,7 +112,7 @@ def extractFeatures(signal):
       for wp in WaveletPacket: #for each wavelet packet
         for node in wp.get_level(level, 'natural'): #get nodes in level in natural order(left->right leaves)
           Nodes = np.hstack([Nodes, node.data]) #cuidado não confundir os nomes pfv
-        fd =  katz_fd(Nodes) if (fdType == 'katz') else hfda.measure(Nodes, 6) #Pegamos a FD do canal associado
+        fd =  katz_fd(Nodes) #Pegamos a FD do canal associado
         #fd = hfda.measure(Nodes, 6) #HIGUCHI
         row = np.append(row, fd) #concatenamos a FD do canal a row, que representa as info. da pessoa atual
         Nodes = np.empty(0, np.float64) #reseta Nodes
