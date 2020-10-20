@@ -99,7 +99,7 @@ def extractFeatures(signal):
 
     WaveletPacket.extend([wp4, wp5, wp6])
     
-    row = np.array([label], np.float64) #cada vetor de carac., primeiro 0 é a classe (saud)
+    row = np.array([]) #cada vetor de carac., primeiro 0 é a classe (saud)
     row = np.hstack([row, entropies])
     '''
     row = np.append(row, firstMoment)
