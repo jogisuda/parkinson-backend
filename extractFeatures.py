@@ -102,4 +102,4 @@ def extractFeatures(signal):
         Nodes = np.empty(0, np.float64) #reseta Nodes
     #print(row.shape)
     feature_vector = np.vstack([feature_vector, row])
-  return feature_vector
+    return feature_vector
