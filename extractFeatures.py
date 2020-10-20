@@ -108,7 +108,7 @@ def extractFeatures(signal):
 
     Nodes = np.empty(0, np.float64) #vetor de nós temporário (para cada nível da tree).
 
-    for level in range(1, levels + 1): #for each DTWPT tree level at most 5, starts from 1 (0 is original signal)
+    for level in range(2): #for each DTWPT tree level at most 5, starts from 1 (0 is original signal)
       for wp in WaveletPacket: #for each wavelet packet
         for node in wp.get_level(level, 'natural'): #get nodes in level in natural order(left->right leaves)
           Nodes = np.hstack([Nodes, node.data]) #cuidado não confundir os nomes pfv
