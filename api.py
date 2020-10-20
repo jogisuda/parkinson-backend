@@ -1,5 +1,6 @@
 from flask import Flask, request #import main Flask class and request object
 from flask_cors import CORS
+import numpy as np
 
 import os
 
@@ -14,13 +15,13 @@ def index():
     #json_obj = request.get_json()
     val1 = request.json
     print("[*] REQ: *****************\n", val1)
-    spiral = request.json.get('spiral')
-    meander = request.json.get('meander')
-    diado = request.json.get('diado')
+    spiral = np.array(request.json.get('spiral'))
+    meander = np.array(request.json.get('meander'))
+    diado = np.array(request.json.get('diado'))
 
     #save spiral, meander, diado in txt
 
-    print("SPIRAL: {}\n".format(spiral))
+    print("SPIRAL: {}\n".format(spiral*100))
     print("MEANDER: {}\n".format(meander))
     print("DIADO: {}\n".format(diado))
 
