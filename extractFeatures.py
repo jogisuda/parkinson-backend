@@ -1,4 +1,20 @@
 import hfda
+import pywt
+import numpy as np
+
+
+def ShannonEntropySignal(s):
+  square = np.square(s)/np.sum(np.square(s))
+  return np.sum(-square*np.log2(square))
+
+def RenyiEntropySignal(s, alpha):
+  if alpha == 0:
+    return np.log2(len(s))
+  elif alpha == 1:
+    return ShannonEntropySignal(s)
+  elif alpha == 2:
+    p = np.square(s)/np.sum(np.square(s))
+    return np.log2(np.sum(p)**2)
 
 def katz_fd(x):
     """Katz Fractal Dimension.
