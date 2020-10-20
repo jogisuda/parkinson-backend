@@ -1,6 +1,9 @@
 from flask import Flask, request #import main Flask class and request object
 from flask_cors import CORS
+import glob
 import numpy as np
+
+from extractFeatures import extractFeatures
 
 import os
 
@@ -21,14 +24,18 @@ def index():
 
     #save spiral, meander, diado in txt
 
-    print("SPIRAL: {}\n".format(spiral*100))
+    print("SPIRAL: {}\n".format(spiral))
     print("MEANDER: {}\n".format(meander))
     print("DIADO: {}\n".format(diado))
 
     #extract features
-    #feature_vector_spiral = getFeatures(spiral)
-    #feature_vector_meander = getFeatures(meander)
-    #feature_vector_diado = getFeatures(diado)
+    feature_vector_spiral = extractFeatures(spiral)
+    feature_vector_meander = extractFeatures(meander)
+    feature_vector_diado = extractFeatures(diado)
+
+    print("SPIRAL: {}\n".format(spiral))
+    print("MEANDER: {}\n".format(meander))
+    print("DIADO: {}\n".format(diado))
 
     #classify
     #predicted_spiral = 
