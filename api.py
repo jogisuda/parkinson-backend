@@ -3,6 +3,8 @@ from flask_cors import CORS
 
 import os
 
+#para próxima abordagem: testar converter em imagem e Deep Learning.
+
 app = Flask(__name__) #create the Flask app
 
 cors = CORS(app, resource={r"/*":{"origins": "*"}})
@@ -12,6 +14,23 @@ def index():
     #json_obj = request.get_json()
     val1 = request.json
     print("[*] REQ: *****************\n", val1)
+    spiral = request.json.get('spiral')
+    meander = request.json.get('meander')
+    diado = request.json.get('diado')
+
+    #save spiral, meander, diado in txt
+
+    print("SPIRAL: {}\n".format(spiral))
+    print("MEANDER: {}\n".format(meander))
+    print("DIADO: {}\n".format(diado))
+
+    #extract features
+    #feature_vector_spiral = getFeatures(spiral)
+    #feature_vector_meander = getFeatures(meander)
+    #feature_vector_diado = getFeatures(diado)
+
+    #classify
+    #predicted_spiral = 
     return 'data received: \n{}'.format(val1)
 
 
