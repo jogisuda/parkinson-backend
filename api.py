@@ -18,6 +18,7 @@ def index():
     #json_obj = request.get_json()
     val1 = request.form
     print("[*] REQ: *****************\n", val1)
+    print("FILE: ", request.files)
     spiral = np.array(request.json.get('spiral'))
     meander = np.array(request.json.get('meander'))
     diado = np.array(request.json.get('diado'))
