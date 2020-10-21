@@ -16,8 +16,8 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 @app.route('/', methods=['POST']) #GET requests will be blocked
 def index():
     #json_obj = request.get_json()
-    val1 = request.form
-    print("[*] REQ: *****************\n", val1)
+    sensorData = request.form
+    print("[*] REQ: *****************\n", sensorData["spiral"])
     print("FILE: ", request.files)
     spiral = np.array(request.json.get('spiral'))
     meander = np.array(request.json.get('meander'))
@@ -38,11 +38,10 @@ def index():
     #print("MEANDER: {}\n".format(meander))
     #print("DIADO: {}\n".format(diado))
 
-    print("FULL OBJECT: ", val1)
 
     #classify
     #predicted_spiral = 
-    return 'data received: \n{}'.format(val1)
+    return 'data received: \n{}'.format(sensorData)
 
 
 if __name__ == '__main__':
