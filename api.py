@@ -33,9 +33,11 @@ def index():
     feature_vector_meander = extractFeatures(meander)
     feature_vector_diado = extractFeatures(diado)
 
-    print("SPIRAL: {}\n".format(spiral))
-    print("MEANDER: {}\n".format(meander))
-    print("DIADO: {}\n".format(diado))
+    #print("SPIRAL: {}\n".format(spiral))
+    #print("MEANDER: {}\n".format(meander))
+    #print("DIADO: {}\n".format(diado))
+
+    print("FULL OBJECT: ", val1)
 
     #classify
     #predicted_spiral = 
