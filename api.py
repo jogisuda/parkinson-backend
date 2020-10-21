@@ -16,7 +16,7 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 @app.route('/', methods=['POST']) #GET requests will be blocked
 def index():
     #json_obj = request.get_json()
-    val1 = request.json
+    val1 = request.form
     print("[*] REQ: *****************\n", val1)
     spiral = np.array(request.json.get('spiral'))
     meander = np.array(request.json.get('meander'))
