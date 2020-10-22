@@ -18,12 +18,11 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 def index():
     #json_obj = request.get_json()
     sensorData = request.form
-    sensorData = json.loads(sensorData)
     print("[*] REQ: *****************\n", sensorData["spiral"])
     print("FILE: ", request.files)
-    spiral = np.array(sensorData['spiral'])
-    meander = np.array(sensorData['meander'])
-    diado = np.array(sensorData['diado'])
+    spiral = np.array(json.loads(sensorData['spiral']))
+    meander = np.array(json.loads(sensorData['meander']) )
+    diado = np.array(json.loads(sensorData['diado']) )
 
     #save spiral, meander, diado in txt
 
