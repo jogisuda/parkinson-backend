@@ -25,7 +25,7 @@ def index():
 
     #save spiral, meander, diado in txt
 
-    print("SPIRAL: {}\n".format(spiral))
+    print("SPIRAL: {}\n".format(spiral*1000))
     print("MEANDER: {}\n".format(meander))
     print("DIADO: {}\n".format(diado))
 
