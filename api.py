@@ -2,6 +2,7 @@ from flask import Flask, request #import main Flask class and request object
 from flask_cors import CORS
 import glob
 import numpy as np
+import json
 
 from extractFeatures import extractFeatures
 
@@ -17,6 +18,7 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 def index():
     #json_obj = request.get_json()
     sensorData = request.form
+    sensorData = json.loads(sensorData)
     print("[*] REQ: *****************\n", sensorData["spiral"])
     print("FILE: ", request.files)
     spiral = np.array(sensorData['spiral'])
