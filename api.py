@@ -18,7 +18,7 @@ def index():
     #json_obj = request.get_json()
     sensorData = request.form
     print(request.get_json(), sensorData)
-    print("[*] REQ: *****************\n", sensorData["spiral"])
+    #print("[*] REQ: *****************\n", sensorData["spiral"])
     print("FILE: ", request.files)
     spiral = np.array(request.json.get('spiral'))
     meander = np.array(request.json.get('meander'))
