@@ -35,14 +35,14 @@ def index():
     feature_vector_meander = extractFeatures(meander)
     feature_vector_diado = extractFeatures(diado)
 
-    #print("SPIRAL: {}\n".format(spiral))
-    #print("MEANDER: {}\n".format(meander))
-    #print("DIADO: {}\n".format(diado))
+    print("SPIRAL: {}\n".format(feature_vector_spiral))
+    print("MEANDER: {}\n".format(feature_vector_meander))
+    print("DIADO: {}\n".format(feature_vector_diado))
 
 
     #classify
     #predicted_spiral = 
-    return 'data received: \n{}'.format(sensorData)
+    return 'DIAGNOSTICO: P/H'
 
 
 if __name__ == '__main__':
